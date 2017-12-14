@@ -16,8 +16,8 @@ function searchRepositories() {
 function showCommits(el) {
   const name = el.dataset.repository
   //console.log(name)
-  const req = new XMLHttpRequest()
-  req.addEventListener("load", displayCommits)
-  req.open("GET", 'https://api.github.com/repos/octocat/' + name + '/commits')
-  req.send()
+  $.get('/https:\/\/api.github.com\/repos\/owner\/repo\/commits/', function(response){
+    console.log(response.items[0].name)
+    document.getElementById("results").innerHTML += response.items[0].name
+  })
 }
