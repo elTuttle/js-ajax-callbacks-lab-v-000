@@ -8,7 +8,7 @@ function displayError() {
 function searchRepositories() {
   var searchTerms = document.getElementById("searchTerms").value
   $.get('/https:\/\/api.github.com\/search\/repositories\?q=' + searchTerms, function(response){
-    console.log(response.items.name)
+    console.log(response.items[0].name)
     document.getElementById("results").innerHTML += response.items.name
   })
 }
