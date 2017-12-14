@@ -9,6 +9,6 @@ function searchRepositories() {
   var searchTerms = document.getElementById("searchTerms").value
   $.get('/https:\/\/api.github.com\/search\/repositories\?q=' + searchTerms, function(response){
     console.log(response.items[0].name)
-    document.getElementById("results").innerHTML += response.items.name
+    document.getElementById("results").innerHTML += response.items[0].name
   })
 }
