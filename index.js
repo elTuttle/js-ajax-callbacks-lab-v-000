@@ -15,6 +15,7 @@ function searchRepositories() {
 
 function showCommits(el) {
   const name = el.dataset.repository
+  const owner = el.dataset.owner
   //console.log(name)
   $.get('/https:\/\/api.github.com\/repos\/owner\/repo\/commits/', function(response){
     console.log(response.items[0].name)
