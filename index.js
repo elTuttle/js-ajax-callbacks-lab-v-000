@@ -18,6 +18,6 @@ function showCommits(el) {
   //console.log(name)
   $.get('/https:\/\/api.github.com\/repos\/' + owner + '\/' + name + '\/commits/', function(response){
     console.log(response[0].sha)
-    document.getElementById("details").innerHTML += response.items[0].name
+    document.getElementById("details").innerHTML += response[0].sha
   })
 }
