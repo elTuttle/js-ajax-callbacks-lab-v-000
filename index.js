@@ -17,6 +17,6 @@ function showCommits(el) {
   const owner = el.dataset.owner
   //console.log(name)
   $.get('/https:\/\/api.github.com\/repos\/' + owner + '\/' + name + '\/commits/', function(response){
-    console.log(response)
+    console.log(response[0].sha)
   })
 }
